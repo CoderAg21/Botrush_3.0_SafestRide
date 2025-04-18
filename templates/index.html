@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeStride - Money Heist Edition</title>
+  <link rel="stylesheet" href="./static/stylesheets/style.css">
+</head>
+<body>
+  <div class="loader-screen"></div>
+  <div class="container">
+    <h1>Hacktivate 5.0 - SafeStride</h1>
+    <img src="https://i.pinimg.com/originals/2d/77/63/2d77634bd4d6ca0a076dd3e97889e856.jpg" alt="Money Heist Mask" class="mask-icon">
+    <h1>SafeStride</h1>
+    <div class="team-section">
+      <h1 style="text-decoration: underline; text-decoration-thickness: 1.5px; text-decoration-color: #e74c3c; text-decoration-style:wavy;">PHINISHERS</h1>
+      <h2>TEAM MEMBERS</h2>
+      <div class="dev-boxes">
+        <div class="box">ABHAY AGRHARI <BR> 20246001</BR></div>
+        <div class="box">ANSHU RAJ <br> 20246031</div>
+      </div>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <label for="image">UPLOAD YOUR HEIST MAP</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
+
+      <label for="team">COLUMNS AND ROWS</label>
+      <input type="number" id="col" name="cols" placeholder="Enter the number of Columns" required>
+      <input type="number" id="row" name="rows" placeholder="Enter the number of Rows" required>
+
+      <button type="submit">Plan the Perfect Heist Route</button>
+    </form>
+
+
+    </div>
+  </div>
+</body>
+</html>
