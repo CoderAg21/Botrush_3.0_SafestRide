@@ -50,6 +50,8 @@ def process_image(filepath,rows,cols,output_path):
         for j in range( column ):
             y1,y2 = i * tile_h,(i + 1) * tile_h
             x1,x2 = j * tile_w,(j + 1) * tile_w
+            lx = i * tile_w
+            ly = j * tile_h
             tile = img[y1:y2,x1:x2]
             tiles.append( tile )
             arr_indx.append( [i,j] )
@@ -78,12 +80,16 @@ def process_image(filepath,rows,cols,output_path):
                 img_array = tf.expand_dims( img_array,0 )
                 prediction = model.predict( img_array )
                 if (prediction[0][0] < .55):
+
                     print( f"Image_{i}_{j}: Safe (Accuracy is: {100 - prediction[0][0] * 100} %)" )
                     safeCell.append( [i,j] )
+                    cv2.putText(img,org=(x1+1,y1+10),fontScale=0.6,color=(0,197,255),thickness=1,lineType = cv2.LINE_4,text='Safe',fontFace=cv2.FONT_HERSHEY_TRIPLEX)
 
                 elif (prediction[0][0] > .55):
                     print( f"Image_{i}_{j}: Unsafe (Accuracy is: {(prediction[0][0] * 100)} %)" )
                     unsafeCell.append( [i,j] )
+                    cv2.putText(img,org=(x1+1,y1+10),fontScale=1,color=(4,0,255),thickness=2,lineType = cv2.LINE_4,text='Unsafe',fontFace=cv2.FONT_HERSHEY_PLAIN)
+
 
 
 

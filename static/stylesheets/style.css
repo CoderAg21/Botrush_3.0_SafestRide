@@ -37,7 +37,7 @@ body {
     .container {
       max-width: 800px;
       margin: auto;
-      background-color: #000;
+      background-color: #000000e0;
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 0 30px rgba(231, 76, 60, 0.7);
