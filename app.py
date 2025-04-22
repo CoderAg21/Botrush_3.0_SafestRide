@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_from_directory
 from model import process_image
+import os
 
 app = Flask(__name__)
 
@@ -28,5 +29,7 @@ def upload():
     return render_template("preview.html",output_img = output_path)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    # Run the app on 0.0.0.0 for external accessibility
+    app.run(host='0.0.0.0', port=port)
  
